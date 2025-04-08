@@ -12,6 +12,7 @@ import ToggleThemeButton from "./components/ToggleThemeButton";
 import { FaEdit, FaPen } from "react-icons/fa";
 import { FaUpDown, FaUpLong } from "react-icons/fa6";
 import ActionIcons from "./components/ActionIcons";
+import Communities from "./pages/Communities";
 
 const App = () => {
   return (
@@ -19,11 +20,13 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about-us" element={<About />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
+        
+        <Route path="/communities" element={<Communities />} />
+        <Route path="/contact-us" element={<Contact />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
       </Routes>
 
       {/* Theme Toggle Button fixed to bottom-right */}

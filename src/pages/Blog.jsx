@@ -1,52 +1,74 @@
 import React from "react";
+import { useTheme } from "../context/ThemeContext"; // Adjust path based on your structure
 
 const blogPosts = [
   {
     id: 1,
-    title: "Organizational and company success on Discy",
-    image: "https://via.placeholder.com/600x400",
-    description: "We want to create a better business and employee tool.",
-    author: "Admin",
-    date: "March 24, 2025",
+    date: "April 5, 2025",
+    title:
+      "Highlighting what’s important about questions & Answers on Discy Community",
+    subtitle: "Advanced Features",
+    content:
+      "We want to make it easier to learn more about a question and highlight key facts about it — such as how popular the question is, how many people are interested in it, and who the audience is. To accomplish...",
+    image: "/images/post1.jpg", // Make sure you replace with actual image path
   },
   {
     id: 2,
-    title: "Defining quality on Discy Q&A – what a helpful answer looks like",
-    image: "https://via.placeholder.com/600x400",
-    description: "Understanding quality answers in a knowledge-sharing platform.",
-    author: "Admin",
-    date: "March 23, 2025",
+    date: "April 6, 2025",
+    title: "Organizational and company accounts on Discy Engine the next step",
+    subtitle: "Advanced Features",
+    content:
+      "We want to make it easier to learn more about a question and highlight key facts about it — such as how popular the question is, how many people are interested in it, and who the audience is. To accomplish...",
+    image: "/images/post2.jpg",
   },
   {
     id: 3,
-    title: "Introducing Keyboard Shortcuts, our fast lane",
-    image: "https://via.placeholder.com/600x400",
-    description: "How keyboard shortcuts can improve efficiency.",
-    author: "Admin",
-    date: "March 22, 2025",
+    date: "April 8, 2025",
+    title:
+      "Defining quality on Discy Engine – what a helpful answer looks like?",
+    subtitle: "Advanced Features",
+    content:
+      "We want to make it easier to learn more about a question and highlight key facts about it — such as how popular the question is, how many people are interested in it, and who the audience is. To accomplish...",
+    image: "/images/post3.jpg",
   },
 ];
 
 const Blog = () => {
+  const { theme } = useTheme();
+
   return (
-    <div className="bg-gray-100 min-h-screen p-6">
-      <h1 className="text-3xl font-bold text-center mb-6">Blog</h1>
-      <div className="max-w-4xl mx-auto">
+    <div
+      className={`${
+        theme === "dark"
+          ? "bg-gray-900 text-white"
+          : "bg-gray-100 text-gray-900"
+      } min-h-screen py-10 px-4 md:px-20`}
+    >
+      <div className="space-y-12 max-w-5xl mx-auto">
         {blogPosts.map((post) => (
-          <div key={post.id} className="bg-white shadow-md rounded-lg mb-6 p-4">
+          <div
+            key={post.id}
+            className={
+              theme == "light"
+                ? "border border-gray-300  p-6 rounded-lg shadow-md bg-white"
+                : "border border-gray-900  p-6 rounded-lg shadow-md bg-gray-800 "
+            }
+          >
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              {post.date}
+            </p>
+            <h2 className="text-xl font-semibold mt-2">{post.title}</h2>
+            <p className="text-blue-500 text-sm mt-1">{post.subtitle}</p>
             <img
               src={post.image}
               alt={post.title}
-              className="w-full h-60 object-cover rounded-lg"
+              className="w-full h-auto mt-4 rounded-md"
             />
-            <h2 className="text-xl font-semibold mt-4">{post.title}</h2>
-            <p className="text-gray-700 mt-2">{post.description}</p>
-            <div className="text-gray-500 text-sm mt-2">
-              <span>{post.date} • {post.author}</span>
+            <p className="mt-4 text-sm">{post.content}</p>
+            <div className="mt-4 flex items-center justify-between text-sm text-blue-600 dark:text-blue-400">
+              <button className="hover:underline">Read More</button>
+              <button className="hover:underline">📤 Share This Article</button>
             </div>
-            <a href="#" className="text-blue-500 mt-2 inline-block">
-              Read More
-            </a>
           </div>
         ))}
       </div>

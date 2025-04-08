@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaBars, FaTimes, FaLock, FaSearch } from "react-icons/fa";
 import NavSideBar from "./NavSideBar";
 import { useTheme } from "../../context/ThemeContext"; // Import useTheme
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const navLinks = [
   {
     to: "/",
@@ -25,12 +25,14 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme } = useTheme(); // Get theme from context
   const [searchTerm, setSearchTerm] = useState("");
+  const navigate=useNavigate();
   // Toggle Sidebar
   const toggleSidebar = () => setIsOpen(!isOpen);
 
   // Open login page
   const openLogin = () => {
-    alert("Open Login Page");
+  
+    navigate("/sign-in")
   };
 
   // Handle search functionality
@@ -60,7 +62,7 @@ const Navbar = () => {
 
         <div className="flex items-center justify-center gap-5">
           {/* Desktop Menu */}
-          <ul className="hidden md:flex gap-3">
+          <ul className="hidden lg:flex gap-3">
             {navLinks?.map((menu) => {
               return (
                 <li
@@ -79,7 +81,7 @@ const Navbar = () => {
           </ul>
 
           {/* Search Bar and Auth Buttons */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4">
             <form onSubmit={handleSearch} className="relative">
               <input
                 type="text"
@@ -100,6 +102,7 @@ const Navbar = () => {
               </button>
             </form>
 
+            <Link to={"/sign-in"}>
             <button
               onClick={openLogin}
               className={`${
@@ -107,14 +110,15 @@ const Navbar = () => {
               }  hover:bg-red-400 rounded py-1 px-2`}
             >
               Sign In
-            </button>
-            <button className="bg-blue-500 text-white px-2 py-1 rounded-md hover:bg-gray-400">
+            </button></Link>
+            <Link to={"/sign-up"}>
+            <button className="bg-blue-500 text-white px-2 py-1 rounded-md hover:bg-gray-400" onClick={openLogin} >
               Sign Up
-            </button>
+            </button></Link>
           </div>
         </div>
         {/* Hamburger Icon for Mobile */}
-        <button onClick={toggleSidebar} className="md:hidden text-gray-400">
+        <button onClick={toggleSidebar} className="lg:hidden text-gray-400">
           {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
       </nav>

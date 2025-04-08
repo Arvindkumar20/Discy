@@ -12,7 +12,7 @@ const LeftSidebar = () => {
 
   const menuItems = [
     { name: "Home", icon: <FaHome />, link: "#" },
-    { name: "Communities", icon: <RiCommunityLine />, link: "#" },
+    { name: "Communities", icon: <RiCommunityLine />, link: "/communities" },
     { name: "Questions", icon: <MdOutlineQuestionAnswer />, link: "#" },
     { name: "Polls", icon: <BsMegaphone />, link: "#" },
     { name: "Groups", icon: <MdGroups />, link: "#" },
@@ -21,7 +21,6 @@ const LeftSidebar = () => {
     { name: "Badges", icon: <FaTrophy />, link: "#" },
     { name: "Users", icon: <FaUsers />, link: "#" },
     { name: "Help", icon: <MdHelpOutline />, link: "#" },
-    { name: "Buy Theme", icon: <FaShoppingCart />, link: "#" },
   ];
 
   return (
