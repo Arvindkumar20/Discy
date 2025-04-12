@@ -1,5 +1,5 @@
 import React from "react";
-import bg from "../assets/bgImageHero.avif";
+import bg from "../assets/react.svg"
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {

@@ -19,7 +19,7 @@ const navLinks = [
   { menuItem: "Tags", icon: <FaTags />, to: "#" },
   { menuItem: "Badges", icon: <FaTrophy />, to: "#" },
   { menuItem: "Users", icon: <FaUsers />, to: "#" },
-  { menuItem: "Help", icon: <MdHelpOutline />, to: "#" },
+  { menuItem: "Help", icon: <MdHelpOutline />, to: "/help" },
 ];
 
 const NavSideBar = ({ isOpen, toggleSidebar }) => {

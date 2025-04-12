@@ -8,17 +8,8 @@ const Home = () => {
   return (
     <>
       <HeroSection />
-      <div className="md:flex flex-1 items-start justify-between">
-        <div className="lg:flex hidden">
-          <LeftSidebar />
-        </div>
-        <div className="lg:w-2/3 w-full">
-          {" "}
-          <MainHome />
-        </div>
-        <RightSideBar />
-      </div>
-    </>
+      <MainHome/>
+      </>
   );
 };
 

@@ -15,12 +15,12 @@ const LeftSidebar = () => {
     { name: "Communities", icon: <RiCommunityLine />, link: "/communities" },
     { name: "Questions", icon: <MdOutlineQuestionAnswer />, link: "#" },
     { name: "Polls", icon: <BsMegaphone />, link: "#" },
-    { name: "Groups", icon: <MdGroups />, link: "#" },
-    { name: "Add group", icon: <RiAddCircleLine />, link: "#" },
-    { name: "Tags", icon: <FaTags />, link: "#" },
-    { name: "Badges", icon: <FaTrophy />, link: "#" },
-    { name: "Users", icon: <FaUsers />, link: "#" },
-    { name: "Help", icon: <MdHelpOutline />, link: "#" },
+    { name: "Groups", icon: <MdGroups />, link: "/groups" },
+    { name: "Add group", icon: <RiAddCircleLine />, link: "/login" },
+    { name: "Tags", icon: <FaTags />, link: "/tags" },
+    { name: "Badges", icon: <FaTrophy />, link: "/badges" },
+    { name: "Users", icon: <FaUsers />, link: "/user-list" },
+    { name: "Help", icon: <MdHelpOutline />, link: "/help" },
   ];
 
   return (
